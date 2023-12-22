@@ -67,7 +67,8 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
       try {
         await sendDataToTelegram(dataToSend as IDataToSend);
         await sendDataToGoogleSheets(dataToSend as IDataToSend);
-
+        console.log('send');
+        trackEvent('Lead');
         return true;
       } catch (error) {
         return false;
@@ -86,8 +87,8 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
 
       if (isSuccess) {
         reset();
-        console.log(reactPixel)
-        trackEvent("Lead");
+        console.log(reactPixel);
+        // trackEvent("Lead");
       }
 
       if (typeof document !== 'undefined') {

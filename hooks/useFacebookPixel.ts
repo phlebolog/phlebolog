@@ -17,11 +17,14 @@ export const useFacebookPixel = () => {
       });
   }, [pathname, searchParams]);
 
-  const trackEvent = useCallback((eventName: string) => {
-    if (reactPixel) {
-      reactPixel.track(eventName);
-    }
-  }, [reactPixel]);
+  const trackEvent = useCallback(
+    (eventName: string) => {
+      if (reactPixel) {
+        reactPixel.track(eventName);
+      }
+    },
+    [reactPixel],
+  );
 
   return { reactPixel, trackEvent };
 };
