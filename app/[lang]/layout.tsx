@@ -11,6 +11,7 @@ import { Toaster } from 'react-hot-toast';
 import { Suspense } from 'react';
 
 import { Footer, Header } from '@/components';
+import FacebookPixelScript from '@/components/FacebookPixelScript/FacebookPixelScript';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -55,6 +56,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang}>
+      <FacebookPixelScript />
       <body
         className={`${inter.className} mt-[75px] bg-white-dark md:mt-[87px] xl:mt-[91px]`}
       >
