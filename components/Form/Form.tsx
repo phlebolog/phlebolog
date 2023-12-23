@@ -42,7 +42,8 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormInputs>();
-  const { reactPixel, trackEvent } = useFacebookPixel();
+  // const { reactPixel, trackEvent } = useFacebookPixel();
+  const { reactPixel } = useFacebookPixel();
 
   useFormPersist(FORM_DATA_KEY, { watch, setValue });
 
@@ -67,8 +68,8 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
       try {
         await sendDataToTelegram(dataToSend as IDataToSend);
         await sendDataToGoogleSheets(dataToSend as IDataToSend);
-        console.log('send');
-        trackEvent('Lead');
+        // console.log('send');
+        // trackEvent('Lead');
         return true;
       } catch (error) {
         return false;
