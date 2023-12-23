@@ -7,7 +7,7 @@ import { Locale } from '@/i18n.config';
 import { getDictionary } from '@/utils/dictionary';
 import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
-// import FacebookPixel from '@/components/FacebookPixel/FacebookPixel';
+import FacebookPixel from '@/components/FacebookPixel/FacebookPixel';
 import { Suspense } from 'react';
 
 import { Footer, Header } from '@/components';
@@ -67,7 +67,9 @@ export default async function RootLayout({
         <div id="modal" />
         <Toaster />
         <Analytics />
-        <Suspense fallback={null}>{/*<FacebookPixel />*/}</Suspense>
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
       </body>
     </html>
   );

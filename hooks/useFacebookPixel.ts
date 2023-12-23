@@ -14,6 +14,7 @@ export const useFacebookPixel = () => {
         setReactPixel(ReactPixel);
         ReactPixel.init(pixel.FB_PIXEL_ID ?? '');
         ReactPixel.pageView();
+        console.log('init facebook Pixel');
       });
   }, [pathname, searchParams]);
 
