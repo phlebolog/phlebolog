@@ -58,11 +58,7 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
     'mx-auto md:mx-0 md:ml-auto xl:ml-0 xl:mr-auto',
   );
 
-  const onSubmit: SubmitHandler<FormInputs> = async (
-    formData: FormInputs,
-    event,
-  ) => {
-    event?.preventDefault();
+  const onSubmit: SubmitHandler<FormInputs> = async (formData: FormInputs) => {
     const sendData = async (formData: FormInputs) => {
       let dataToSend = {};
       for (let key in formData) {
@@ -74,6 +70,7 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
         await sendDataToGoogleSheets(dataToSend as IDataToSend);
         // console.log('send');
         // trackEvent('Lead');
+        window.fbq('track', 'Lead');
         return true;
       } catch (error) {
         return false;
@@ -143,6 +140,7 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
         isChecked={!!watch().userAgree}
         options={agree}
       />
+      <button>Submit</button>
       <SubmitButton className={buttonClass} disabled={isLoading}>
         {isLoading ? loadingText : buttonCurrentText}
       </SubmitButton>
