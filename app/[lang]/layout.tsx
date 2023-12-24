@@ -9,6 +9,7 @@ import { Inter } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 // import FacebookPixel from '@/components/FacebookPixel/FacebookPixel';
 import { Suspense } from 'react';
+import GoogleTag from '@/components/GoogleTag/GoogleTag';
 
 import { Footer, Header } from '@/components';
 import FacebookPixelScript from '@/components/FacebookPixelScript/FacebookPixelScript';
@@ -57,9 +58,18 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <FacebookPixelScript />
+      <GoogleTag />
       <body
         className={`${inter.className} mt-[75px] bg-white-dark md:mt-[87px] xl:mt-[91px]`}
       >
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
         <Header lang={lang} />
         {children}
         <Footer
