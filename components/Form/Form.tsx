@@ -58,7 +58,11 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
     'mx-auto md:mx-0 md:ml-auto xl:ml-0 xl:mr-auto',
   );
 
-  const onSubmit: SubmitHandler<FormInputs> = async (formData: FormInputs) => {
+  const onSubmit: SubmitHandler<FormInputs> = async (
+    formData: FormInputs,
+    event,
+  ) => {
+    event?.preventDefault();
     const sendData = async (formData: FormInputs) => {
       let dataToSend = {};
       for (let key in formData) {
