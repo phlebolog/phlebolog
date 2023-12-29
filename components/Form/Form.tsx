@@ -140,7 +140,7 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
         isChecked={!!watch().userAgree}
         options={agree}
       />
-      <button>Submit</button>
+
       <SubmitButton className={buttonClass} disabled={isLoading}>
         {isLoading ? loadingText : buttonCurrentText}
       </SubmitButton>
