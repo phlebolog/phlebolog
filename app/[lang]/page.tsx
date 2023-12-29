@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 
 import { MainWrapper } from '@/components';
 import { HeroSection, AdvantagesSection, BannerSection } from '@/sections';
+import Consultation from '@/sections/Consultation/Consultation';
 
 const AboutSection = dynamic(
   () => import('@/sections').then(mod => mod.AboutSection),
@@ -17,12 +18,12 @@ const AboutSection = dynamic(
 const FAQ = dynamic(() => import('@/sections').then(mod => mod.FAQSection), {
   ssr: false,
 });
-const Consultation = dynamic(
-  () => import('@/sections').then(mod => mod.ConsultationSection),
-  {
-    ssr: false,
-  },
-);
+// const Consultation = dynamic(
+//   () => import('@/sections').then(mod => mod.ConsultationSection),
+//   {
+//     ssr: false,
+//   },
+// );
 const Results = dynamic(
   () => import('@/sections').then(mod => mod.ResultsSection),
   {
