@@ -1,17 +1,18 @@
-'use client';
+// 'use client';
 
 import { FC } from 'react';
 
 import { ConsultationProps } from './Consultation.props';
 import { Heading, Form } from '@/components';
-import { useWindowWidth } from '@/hooks';
+// import { useWindowWidth } from '@/hooks';
 
 const Consultation: FC<ConsultationProps> = ({
   staticData,
   className = '',
 }) => {
-  const { isScreenMobile } = useWindowWidth();
-  const { title, callText, callTextMobile, form } = staticData;
+  // const { isScreenMobile } = useWindowWidth();
+  // const { title, callText, callTextMobile, form } = staticData;
+  const { title, callText, form } = staticData;
   return (
     <section id="consultation" className={className}>
       <div className="container">
@@ -28,7 +29,8 @@ const Consultation: FC<ConsultationProps> = ({
           </Heading>
           <div className="xl:pt-20">
             <p className="mx-auto mb-4 whitespace-pre-wrap text-center text-sm leading-[1.29] -tracking-[0.56px] text-white md:mb-6 md:text-xl xl:mb-4">
-              {isScreenMobile ? callTextMobile : callText}
+              {/*{isScreenMobile ? callTextMobile : callText}*/}
+              {callText}
             </p>
             <Form
               staticData={form}
