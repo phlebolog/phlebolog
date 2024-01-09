@@ -33,7 +33,7 @@ export async function generateMetadata({
     description: metadata.description,
     metadataBase: new URL(metadata.base),
     alternates: {
-      canonical: process.env.NEXT_PUBLIC_SITE_URL,
+      canonical: process.env.NEXT_PUBLIC_SITE_URL + '/uk',
       languages: {
         'uk-UA': '/uk',
         'en-US': '/en',
