@@ -21,7 +21,6 @@ import {
 
 import { FORM_DATA_KEY } from '@/constants';
 import { IDataToSend } from '@/types';
-// import { useFacebookPixel } from '@/hooks';
 
 const Form: FC<FormProps> = ({ staticData, className = '' }) => {
   const { input, textarea, checkbox, button, toastMessage } = staticData;
@@ -42,8 +41,6 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormInputs>();
-  // const { reactPixel, trackEvent } = useFacebookPixel();
-  // const { reactPixel } = useFacebookPixel();
 
   useFormPersist(FORM_DATA_KEY, { watch, setValue });
 
@@ -68,8 +65,6 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
       try {
         await sendDataToTelegram(dataToSend as IDataToSend);
         await sendDataToGoogleSheets(dataToSend as IDataToSend);
-        // console.log('send');
-        // trackEvent('Lead');
         window.fbq('track', 'Lead');
         return true;
       } catch (error) {
@@ -89,8 +84,6 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
 
       if (isSuccess) {
         reset();
-        // console.log(reactPixel);
-        // trackEvent("Lead");
       }
 
       if (typeof document !== 'undefined') {
@@ -98,8 +91,6 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
         submitButton && submitButton.blur();
       }
 
-      // pixel.init();
-      // pixel.event('Lead');
       showToast(isSuccess, toastMessage);
     } catch (error) {
       console.log(error);
