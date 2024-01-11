@@ -32,7 +32,7 @@ const FormCheckbox: FC<FormCheckboxProps> = ({
   );
 
   return (
-    <label className="relative mb-4 flex max-w-fit pl-6 text-black-dark hover:cursor-pointer">
+    <label className="relative mb-4 flex max-w-fit items-center pl-6 text-black-dark hover:cursor-pointer">
       <Controller
         shouldUnregister
         name={name}
@@ -45,7 +45,7 @@ const FormCheckbox: FC<FormCheckboxProps> = ({
       <span className={checkboxClass} aria-label="Confirmation checkbox">
         {isChecked && <SvgCheck width={16} height={16} aria-hidden />}
       </span>
-      <span className="block text-xs leading-normal -tracking-[0.48px]">
+      <span className="block text-sm leading-normal -tracking-[0.48px] md:text-base">
         {label}
       </span>
     </label>

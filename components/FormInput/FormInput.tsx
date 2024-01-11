@@ -24,7 +24,7 @@ const FormInput: FC<FormInputProps> = ({
 
   return (
     <label className="relative mb-8 flex flex-col text-black-dark">
-      <span className="mb-2 text-xs leading-normal -tracking-[0.48px]">
+      <span className="mb-2 text-sm leading-normal -tracking-[0.48px] md:text-xl">
         {label}
       </span>
       <input
@@ -35,7 +35,7 @@ const FormInput: FC<FormInputProps> = ({
       />
 
       {hasError ? (
-        <span className="absolute top-full mt-1 text-xs leading-[1.21] -tracking-[0.48px] text-notify-error">
+        <span className="absolute top-full mt-1 text-xs leading-[1.21] -tracking-[0.48px] text-notify-error md:text-sm ">
           {error}
         </span>
       ) : null}
