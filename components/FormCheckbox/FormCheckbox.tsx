@@ -21,7 +21,7 @@ const FormCheckbox: FC<FormCheckboxProps> = ({
   const hasError = errors[name];
 
   const checkboxClass = classnames(
-    'custom-checkbox absolute -ml-6 flex h-4 w-4 items-center justify-center rounded border hover:border-gray-dim focus:border-gray-dim transition-all duration-300',
+    'custom-checkbox absolute -ml-6 flex h-5 w-5 items-center justify-center rounded border hover:border-gray-dim focus:border-gray-dim transition-all duration-300',
     { 'border-gray-dark': !isChecked && !hasError },
     {
       'border-gray-dim': isChecked,
@@ -43,7 +43,7 @@ const FormCheckbox: FC<FormCheckboxProps> = ({
         )}
       />
       <span className={checkboxClass} aria-label="Confirmation checkbox">
-        {isChecked && <SvgCheck width={16} height={16} aria-hidden />}
+        {isChecked && <SvgCheck width={20} height={20} aria-hidden />}
       </span>
       <span className="block text-sm leading-normal -tracking-[0.48px] md:text-base">
         {label}

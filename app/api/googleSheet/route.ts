@@ -10,6 +10,8 @@ const GOOGLE_SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID as string;
 export async function POST(req: Request) {
   const body = await req.json();
 
+  const cleanedPhoneNumber = body.phoneNumber.replace(/[+()\-]/g, '');
+
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -30,10 +32,12 @@ export async function POST(req: Request) {
 
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: GOOGLE_SHEET_ID,
-      range: 'A1:C1',
+      range: 'A1:D1',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[body.userName, body.phoneNumber, body.userMessage]],
+        values: [
+          [body.date, body.userName, cleanedPhoneNumber, body.userMessage],
+        ],
       },
     });
 

@@ -11,12 +11,14 @@ import { sendDataToTelegram } from '@/utils/sendDataToTelegram';
 import { sendDataToGoogleSheets } from '@/utils/sendDataToGoogleSheets';
 import formBuildingData from '@/data/formBuildingData.json';
 import { showToast } from '@/utils/showToast';
+import { getdate } from '@/utils/getDateToForm';
 
 import {
   FormInput,
   FormTextarea,
   FormCheckbox,
   SubmitButton,
+  FormMaskInput,
 } from '@/components';
 
 import { FORM_DATA_KEY } from '@/constants';
@@ -61,6 +63,12 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
       for (let key in formData) {
         if (key !== 'userAgree') dataToSend[key] = formData[key];
       }
+
+      const formattedDate = getdate();
+      const additionalKey = 'date';
+      const additionalValue = formattedDate;
+
+      dataToSend[additionalKey] = additionalValue;
 
       try {
         await sendDataToTelegram(dataToSend as IDataToSend);
@@ -112,7 +120,7 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
         errors={errors}
         options={name}
       />
-      <FormInput
+      <FormMaskInput
         staticData={input.phone}
         register={register}
         errors={errors}

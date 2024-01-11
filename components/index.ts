@@ -85,5 +85,6 @@ export { default as Form } from '@/components/Form/Form';
 export { default as FormInput } from '@/components/FormInput/FormInput';
 export { default as FormTextarea } from '@/components/FormTextarea/FormTextarea';
 export { default as FormCheckbox } from '@/components/FormCheckbox/FormCheckbox';
+export { default as FormMaskInput } from '@/components/FormMaskInput/FormMaskInput';
 
 export { default as MainWrapper } from '@/components/MainWrapper/MainWrapper';
