@@ -4,6 +4,7 @@ import { FC, useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
 import classnames from 'classnames';
+import { useSearchParams } from 'next/navigation';
 
 import { FormProps, FormInputs, IFormBuildingData } from './Form.props';
 
@@ -33,6 +34,12 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [buttonCurrentText, setButtonCurrentText] = useState<string>(sendText);
+  const searchParams = useSearchParams();
+
+  const utm_source = searchParams.get('utm_source') || '';
+  const utm_medium = searchParams.get('utm_medium') || '';
+  const utm_campaign = searchParams.get('utm_campaign') || '';
+  const utm_content = searchParams.get('utm_content') || '';
 
   const {
     register,
@@ -70,9 +77,31 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
 
       dataToSend[additionalKey] = additionalValue;
 
+      const sourceKey = 'utm_source';
+      const sourceValue = utm_source;
+
+      const mediumKey = 'utm_medium';
+      const mediumValue = utm_medium;
+
+      const campaignKey = 'utm_campaign';
+      const campaignValue = utm_campaign;
+
+      const contentKey = 'utm_content';
+      const contentValue = utm_content;
+
+      let dataGoogleSheetToSend = {};
+      for (let key in formData) {
+        if (key !== 'userAgree') dataGoogleSheetToSend[key] = formData[key];
+      }
+      dataGoogleSheetToSend[sourceKey] = sourceValue;
+      dataGoogleSheetToSend[mediumKey] = mediumValue;
+      dataGoogleSheetToSend[campaignKey] = campaignValue;
+      dataGoogleSheetToSend[contentKey] = contentValue;
+      dataGoogleSheetToSend[additionalKey] = additionalValue;
       try {
         await sendDataToTelegram(dataToSend as IDataToSend);
-        await sendDataToGoogleSheets(dataToSend as IDataToSend);
+
+        await sendDataToGoogleSheets(dataGoogleSheetToSend as IDataToSend);
         window.fbq('track', 'Lead');
         return true;
       } catch (error) {
