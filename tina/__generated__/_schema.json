@@ -1,9 +1,9 @@
 {
   "version": {
-    "fullVersion": "1.4.27",
+    "fullVersion": "1.4.32",
     "major": "1",
     "minor": "4",
-    "patch": "27"
+    "patch": "32"
   },
   "meta": { "flags": ["experimentalData"] },
   "collections": [
@@ -18,14 +18,16 @@
           "label": "Photo",
           "type": "image",
           "namespace": ["about", "photo"],
-          "searchable": false
+          "searchable": false,
+          "uid": false
         },
         {
           "name": "video",
           "label": "Video",
           "type": "string",
           "namespace": ["about", "video"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         },
         {
           "name": "general",
@@ -44,7 +46,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "general", "uk", "name"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "profession",
@@ -52,7 +55,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "general", "uk", "profession"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "education",
@@ -71,12 +75,14 @@
                         "education",
                         "institution"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "institution": "" } },
                   "namespace": ["about", "general", "uk", "education"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "experience",
@@ -95,17 +101,20 @@
                         "experience",
                         "point"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "point": "" } },
                   "namespace": ["about", "general", "uk", "experience"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "name": "" } },
               "namespace": ["about", "general", "uk"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             },
             {
               "name": "en",
@@ -118,7 +127,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "general", "en", "name"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "profession",
@@ -126,7 +136,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "general", "en", "profession"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "education",
@@ -145,12 +156,14 @@
                         "education",
                         "institution"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "institution": "" } },
                   "namespace": ["about", "general", "en", "education"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "experience",
@@ -169,21 +182,25 @@
                         "experience",
                         "point"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "point": "" } },
                   "namespace": ["about", "general", "en", "experience"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "name": "" } },
               "namespace": ["about", "general", "en"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "namespace": ["about", "general"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         },
         {
           "name": "education",
@@ -202,7 +219,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "education", "uk", "title"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "institutions",
@@ -221,7 +239,8 @@
                         "institutions",
                         "period"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     },
                     {
                       "name": "institution",
@@ -234,17 +253,20 @@
                         "institutions",
                         "institution"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "institution": "" } },
                   "namespace": ["about", "education", "uk", "institutions"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "title": "" } },
               "namespace": ["about", "education", "uk"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             },
             {
               "name": "en",
@@ -257,7 +279,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "education", "en", "title"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "institutions",
@@ -276,7 +299,8 @@
                         "institutions",
                         "period"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     },
                     {
                       "name": "institution",
@@ -289,21 +313,25 @@
                         "institutions",
                         "institution"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "institution": "" } },
                   "namespace": ["about", "education", "en", "institutions"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "title": "" } },
               "namespace": ["about", "education", "en"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "namespace": ["about", "education"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         },
         {
           "name": "career",
@@ -322,7 +350,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "career", "uk", "title"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "institutions",
@@ -341,7 +370,8 @@
                         "institutions",
                         "period"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     },
                     {
                       "name": "institution",
@@ -354,17 +384,20 @@
                         "institutions",
                         "institution"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "institution": "" } },
                   "namespace": ["about", "career", "uk", "institutions"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "title": "" } },
               "namespace": ["about", "career", "uk"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             },
             {
               "name": "en",
@@ -377,7 +410,8 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["about", "career", "en", "title"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "institutions",
@@ -396,7 +430,8 @@
                         "institutions",
                         "period"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     },
                     {
                       "name": "institution",
@@ -409,21 +444,25 @@
                         "institutions",
                         "institution"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "ui": { "defaultItem": { "institution": "" } },
                   "namespace": ["about", "career", "en", "institutions"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "title": "" } },
               "namespace": ["about", "career", "en"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "namespace": ["about", "career"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         },
         {
           "name": "certificates",
@@ -438,7 +477,8 @@
               "type": "image",
               "required": true,
               "namespace": ["about", "certificates", "photo"],
-              "searchable": false
+              "searchable": false,
+              "uid": false
             },
             {
               "name": "description",
@@ -463,11 +503,13 @@
                         "uk",
                         "alt"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "namespace": ["about", "certificates", "description", "uk"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "en",
@@ -486,20 +528,24 @@
                         "en",
                         "alt"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     }
                   ],
                   "namespace": ["about", "certificates", "description", "en"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "namespace": ["about", "certificates", "description"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "ui": { "defaultItem": { "description": { "uk": { "alt": "" } } } },
           "namespace": ["about", "certificates"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         }
       ],
       "namespace": ["about"]
@@ -521,7 +567,8 @@
               "type": "string",
               "required": true,
               "namespace": ["banner", "uk", "title"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             },
             {
               "name": "description",
@@ -529,11 +576,13 @@
               "type": "string",
               "required": true,
               "namespace": ["banner", "uk", "description"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "namespace": ["banner", "uk"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         },
         {
           "name": "en",
@@ -546,7 +595,8 @@
               "type": "string",
               "required": true,
               "namespace": ["banner", "en", "title"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             },
             {
               "name": "description",
@@ -554,11 +604,13 @@
               "type": "string",
               "required": true,
               "namespace": ["banner", "en", "description"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "namespace": ["banner", "en"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         }
       ],
       "namespace": ["banner"]
@@ -580,7 +632,8 @@
               "label": "Date",
               "type": "datetime",
               "namespace": ["results", "case", "date"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             },
             {
               "name": "content",
@@ -604,7 +657,8 @@
                         "uk",
                         "title"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     },
                     {
                       "name": "description",
@@ -619,11 +673,13 @@
                         "description"
                       ],
                       "searchable": true,
-                      "parser": { "type": "markdown" }
+                      "parser": { "type": "markdown" },
+                      "uid": false
                     }
                   ],
                   "namespace": ["results", "case", "content", "uk"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "en",
@@ -642,7 +698,8 @@
                         "en",
                         "title"
                       ],
-                      "searchable": true
+                      "searchable": true,
+                      "uid": false
                     },
                     {
                       "name": "description",
@@ -657,15 +714,18 @@
                         "description"
                       ],
                       "searchable": true,
-                      "parser": { "type": "markdown" }
+                      "parser": { "type": "markdown" },
+                      "uid": false
                     }
                   ],
                   "namespace": ["results", "case", "content", "en"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 }
               ],
               "namespace": ["results", "case", "content"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             },
             {
               "name": "before",
@@ -673,7 +733,8 @@
               "type": "image",
               "required": true,
               "namespace": ["results", "case", "before"],
-              "searchable": false
+              "searchable": false,
+              "uid": false
             },
             {
               "name": "after",
@@ -681,7 +742,8 @@
               "type": "image",
               "required": true,
               "namespace": ["results", "case", "after"],
-              "searchable": false
+              "searchable": false,
+              "uid": false
             }
           ],
           "ui": {
@@ -690,7 +752,8 @@
             }
           },
           "namespace": ["results", "case"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         }
       ],
       "namespace": ["results"]
@@ -718,7 +781,8 @@
                   "type": "datetime",
                   "required": true,
                   "namespace": ["reviews", "uk", "case", "date"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "photo",
@@ -726,14 +790,16 @@
                   "type": "image",
                   "required": true,
                   "namespace": ["reviews", "uk", "case", "photo"],
-                  "searchable": false
+                  "searchable": false,
+                  "uid": false
                 },
                 {
                   "name": "video",
                   "label": "Video",
                   "type": "string",
                   "namespace": ["reviews", "uk", "case", "video"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "name",
@@ -741,14 +807,16 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["reviews", "uk", "case", "name"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "telegram",
                   "label": "Telegram",
                   "type": "string",
                   "namespace": ["reviews", "uk", "case", "telegram"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "review",
@@ -756,16 +824,19 @@
                   "type": "rich-text",
                   "namespace": ["reviews", "uk", "case", "review"],
                   "searchable": true,
-                  "parser": { "type": "markdown" }
+                  "parser": { "type": "markdown" },
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "name": "" } },
               "namespace": ["reviews", "uk", "case"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "namespace": ["reviews", "uk"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         },
         {
           "name": "en",
@@ -784,7 +855,8 @@
                   "type": "datetime",
                   "required": true,
                   "namespace": ["reviews", "en", "case", "date"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "photo",
@@ -792,14 +864,16 @@
                   "type": "image",
                   "required": true,
                   "namespace": ["reviews", "en", "case", "photo"],
-                  "searchable": false
+                  "searchable": false,
+                  "uid": false
                 },
                 {
                   "name": "video",
                   "label": "Video",
                   "type": "string",
                   "namespace": ["reviews", "en", "case", "video"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "name",
@@ -807,14 +881,16 @@
                   "type": "string",
                   "required": true,
                   "namespace": ["reviews", "en", "case", "name"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "telegram",
                   "label": "Telegram",
                   "type": "string",
                   "namespace": ["reviews", "en", "case", "telegram"],
-                  "searchable": true
+                  "searchable": true,
+                  "uid": false
                 },
                 {
                   "name": "review",
@@ -822,16 +898,19 @@
                   "type": "rich-text",
                   "namespace": ["reviews", "en", "case", "review"],
                   "searchable": true,
-                  "parser": { "type": "markdown" }
+                  "parser": { "type": "markdown" },
+                  "uid": false
                 }
               ],
               "ui": { "defaultItem": { "name": "" } },
               "namespace": ["reviews", "en", "case"],
-              "searchable": true
+              "searchable": true,
+              "uid": false
             }
           ],
           "namespace": ["reviews", "en"],
-          "searchable": true
+          "searchable": true,
+          "uid": false
         }
       ],
       "namespace": ["reviews"]
