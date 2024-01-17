@@ -1,16 +1,20 @@
 import { google } from 'googleapis';
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 const GOOGLE_CLIENT_EMAIL = process.env
   .NEXT_PUBLIC_GOOGLE_CLIENT_EMAIL as string;
 const GOOGLE_PRIVATE_KEY = process.env.NEXT_PUBLIC_GOOGLE_PRIVATE_KEY as string;
 const GOOGLE_SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID as string;
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const body = await req.json();
   const cleanedPhoneNumber = body.phoneNumber.replace(/[+()\-]/g, '');
 
+  const utm_medium = req.cookies.get('utm_medium')?.value;
+  const utm_source = req.cookies.get('utm_source')?.value;
+  const utm_campaign = req.cookies.get('utm_campaign')?.value;
+  const utm_content = req.cookies.get('utm_content')?.value;
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -40,10 +44,10 @@ export async function POST(req: Request) {
             body.userName,
             cleanedPhoneNumber,
             body.userMessage,
-            body.utm_source,
-            body.utm_medium,
-            body.utm_campaign,
-            body.utm_content,
+            utm_medium,
+            utm_source,
+            utm_campaign,
+            utm_content,
           ],
         ],
       },
