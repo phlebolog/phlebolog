@@ -18,20 +18,58 @@ function getLocale(request: NextRequest): string | undefined {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const queryParams = request.nextUrl.searchParams;
+  const utm_medium = queryParams.get('utm_medium');
+  const utm_source = queryParams.get('utm_source');
+  const utm_campaign = queryParams.get('utm_campaign');
+  const utm_content = queryParams.get('utm_content');
+
   const pathnameIsMissingLocale = i18n.locales.every(
     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
 
   // Redirect if there is no locale
+
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
 
-    return NextResponse.redirect(
+    const response = NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
         request.url,
       ),
     );
+    if (utm_medium) {
+      response.cookies.set('utm_medium', utm_medium);
+    }
+
+    if (utm_source) {
+      response.cookies.set('utm_source', utm_source);
+    }
+
+    if (utm_campaign) {
+      response.cookies.set('utm_campaign', utm_campaign);
+    }
+    if (utm_content) {
+      response.cookies.set('utm_content', utm_content);
+    }
+    return response;
+  } else {
+    const response = NextResponse.next();
+    if (utm_medium) {
+      response.cookies.set('utm_medium', utm_medium);
+    }
+    if (utm_source) {
+      response.cookies.set('utm_source', utm_source);
+    }
+
+    if (utm_campaign) {
+      response.cookies.set('utm_campaign', utm_campaign);
+    }
+    if (utm_content) {
+      response.cookies.set('utm_content', utm_content);
+    }
+    return response;
   }
 }
 
