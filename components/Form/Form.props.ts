@@ -58,4 +58,5 @@ export interface IForm {
 export interface FormProps {
   staticData: IForm;
   className?: string;
+  setIsOpen?: any;
 }
