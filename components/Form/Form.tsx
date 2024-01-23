@@ -24,7 +24,7 @@ import {
 import { FORM_DATA_KEY } from '@/constants';
 import { IDataToSend } from '@/types';
 
-const Form: FC<FormProps> = ({ staticData, className = '' }) => {
+const Form: FC<FormProps> = ({ staticData, setIsOpen, className = '' }) => {
   const { input, textarea, checkbox, button, toastMessage } = staticData;
   const { sendText, sentText, loadingText, errorText } = button;
   const {
@@ -104,6 +104,9 @@ const Form: FC<FormProps> = ({ staticData, className = '' }) => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      if (setIsOpen) {
+        setIsOpen(false);
+      }
     }
   };
 

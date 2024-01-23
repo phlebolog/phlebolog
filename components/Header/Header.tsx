@@ -1,13 +1,17 @@
 import { Locale } from '@/i18n.config';
-import {
-  LocaleSwitcher,
-  Logo,
-  ScrollLinkButton,
-  BurgerMenu,
-} from '@/components';
+import { LocaleSwitcher, Logo, BurgerMenu } from '@/components';
 import { getDictionary } from '@/utils/dictionary';
+import OpenFormButton from '../Buttons/OpenFormButton/OpenFormButton';
+import { IIconBtnData } from '@/types';
+import { IForm } from '../Form/Form.props';
 
-const Header = async ({ lang }: { lang: Locale }) => {
+const Header = async ({
+  lang,
+  staticData,
+}: {
+  lang: Locale;
+  staticData: { iconBtnData: IIconBtnData; form: IForm };
+}) => {
   const { navigation, header, socials } = await getDictionary(lang);
   const { linkButton, formButton, langButton } = header;
   const { telegram } = socials;
@@ -35,13 +39,10 @@ const Header = async ({ lang }: { lang: Locale }) => {
                 data={langButton}
                 className="hidden xl:flex xl:w-[90px] xl:px-10"
               />
-              <ScrollLinkButton
-                variant="menu"
-                linkto="consultation"
-                className=" py-3 -tracking-[0.48px] md:w-[242px] xl:w-[290px] "
-              >
+
+              <OpenFormButton staticData={staticData}>
                 {formButton}
-              </ScrollLinkButton>
+              </OpenFormButton>
             </div>
             <BurgerMenu
               staticData={{ navigation, header, socials }}

@@ -68,7 +68,13 @@ export default async function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
-        <Header lang={lang} />
+        <Header
+          lang={lang}
+          staticData={{
+            iconBtnData: iconBtnData,
+            form: page.home.consultation.form,
+          }}
+        />
         {children}
         <Footer
           staticData={{ footerData: footer, socials, iconBtnData, navigation }}
