@@ -24,7 +24,12 @@ import {
 import { FORM_DATA_KEY } from '@/constants';
 import { IDataToSend } from '@/types';
 
-const Form: FC<FormProps> = ({ staticData, setIsOpen, className = '' }) => {
+const Form: FC<FormProps> = ({
+  staticData,
+  actionCloseHandler,
+  setIsOpen,
+  className = '',
+}) => {
   const { input, textarea, checkbox, button, toastMessage } = staticData;
   const { sendText, sentText, loadingText, errorText } = button;
   const {
@@ -104,9 +109,14 @@ const Form: FC<FormProps> = ({ staticData, setIsOpen, className = '' }) => {
       console.log(error);
     } finally {
       setIsLoading(false);
-      if (setIsOpen) {
-        setIsOpen(false);
-      }
+      setTimeout(() => {
+        if (setIsOpen) {
+          setIsOpen(false);
+        }
+        if (actionCloseHandler) {
+          actionCloseHandler();
+        }
+      }, 1000);
     }
   };
 
@@ -143,7 +153,10 @@ const Form: FC<FormProps> = ({ staticData, setIsOpen, className = '' }) => {
         options={agree}
       />
 
-      <SubmitButton className={buttonClass} disabled={isLoading}>
+      <SubmitButton
+        className={`${buttonClass} ${isLoading ? '!bg-gray-light' : ''}`}
+        disabled={isLoading}
+      >
         {isLoading ? loadingText : buttonCurrentText}
       </SubmitButton>
     </form>

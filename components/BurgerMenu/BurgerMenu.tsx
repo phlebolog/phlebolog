@@ -14,6 +14,8 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ staticData, lang }) => {
   const {
     navigation,
     socials: { telegram },
+    iconBtnData,
+    form,
   } = staticData;
 
   const transition = useTransition(showMenu, {
@@ -83,7 +85,14 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ staticData, lang }) => {
                 />
 
                 <MenuActions
-                  data={{ formButton, linkButton, langButton, telegram }}
+                  data={{
+                    formButton,
+                    linkButton,
+                    langButton,
+                    telegram,
+                    iconBtnData,
+                    form,
+                  }}
                   actionHandler={handleMenuToggle}
                 />
               </div>

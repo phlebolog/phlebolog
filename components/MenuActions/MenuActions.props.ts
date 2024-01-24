@@ -1,4 +1,5 @@
-import { ILocaleSwitcherData } from '@/types';
+import { ILocaleSwitcherData, IIconBtnData } from '@/types';
+import { IForm } from '../Form/Form.props';
 
 export interface MenuActionsProps {
   data: MenuActionData;
@@ -10,4 +11,6 @@ type MenuActionData = {
   linkButton: string;
   langButton: ILocaleSwitcherData;
   telegram: string;
+  iconBtnData: IIconBtnData;
+  form: IForm;
 };
