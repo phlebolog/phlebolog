@@ -1,22 +1,22 @@
 import {
   ExternalLinkButton,
-  ScrollLinkButton,
+  OpenFormButton,
   LocaleSwitcher,
 } from '@/components';
 
 import { MenuActionsProps } from './MenuActions.props';
 
 const MenuActions: React.FC<MenuActionsProps> = ({ data, actionHandler }) => {
-  const { formButton, linkButton, langButton, telegram } = data;
+  const { formButton, linkButton, langButton, telegram, iconBtnData, form } =
+    data;
   return (
     <div className="flex flex-col gap-2">
-      <ScrollLinkButton
-        linkto="consultation"
-        variant="menu"
-        actionHandler={actionHandler}
+      <OpenFormButton
+        staticData={{ iconBtnData, form }}
+        actionCloseHandler={actionHandler}
       >
         {formButton}
-      </ScrollLinkButton>
+      </OpenFormButton>
 
       <ExternalLinkButton
         linkto={telegram}

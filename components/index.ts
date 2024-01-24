@@ -16,6 +16,7 @@ export { default as ScrollLinkButton } from '@/components/Buttons/ScrollLinkButt
 export { default as IconBtn } from '@/components/Buttons/IconBtn/IconBtn';
 export { default as BurgerMenuButton } from '@/components/Buttons/BurgerMenuButton/BurgerMenuButton';
 export { default as MethodButton } from '@/components/Buttons/MethodButton/MethodButton';
+export { default as OpenFormButton } from '@/components/Buttons/OpenFormButton/OpenFormButton';
 
 // slider before-after
 export { default as SliderBeforeAfter } from '@/components/SliderBeforeAfter/SliderBeforeAfter';

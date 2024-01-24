@@ -15,6 +15,7 @@ const Header = async ({
   const { navigation, header, socials } = await getDictionary(lang);
   const { linkButton, formButton, langButton } = header;
   const { telegram } = socials;
+  const { iconBtnData, form } = staticData;
 
   return (
     <header className="fixed top-0 z-10 w-full bg-body/90 pb-3  pt-6  md:pb-6 xl:pt-7">
@@ -45,7 +46,7 @@ const Header = async ({
               </OpenFormButton>
             </div>
             <BurgerMenu
-              staticData={{ navigation, header, socials }}
+              staticData={{ navigation, header, socials, iconBtnData, form }}
               lang={lang}
             />
           </div>

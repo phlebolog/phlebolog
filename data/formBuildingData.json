@@ -10,7 +10,7 @@
     "phone": {
       "name": "phoneNumber",
       "required": true,
-      "pattern": "^\\+38\\(\\d{3}\\)\\d{3}-\\d{2}-\\d{2}$",
+      "pattern": "^\\+38\\(0[1-9]\\d{1}\\)(?!000-00-00)\\d{3}-\\d{2}-\\d{2}$",
       "minLength": 12,
       "maxLength": 17
     },

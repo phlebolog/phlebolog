@@ -12,9 +12,9 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({
   actionHandler,
 }) => {
   const btnClass = classnames(
-    'xl:bg-white-light xl:mediaHover:hover:bg-gray-light xl:focus:bg-gray-light',
+    'xl:bg-primary-dark-300 xl:mediaHover:hover:bg-primary-dark-400 xl:bg-primary-dark-400',
 
-    'flex items-center justify-center w-[224px] h-[51px] bg-gray-light md:w-[179px] text-black-dark text-base rounded-normal leading-extended -tracking-[0.64px]',
+    'flex items-center justify-center w-[224px] h-[51px] bg-primary-dark-300 md:w-[179px] text-white text-base rounded-normal leading-extended -tracking-[0.64px]',
 
     'mediaHover:hover:cursor-pointer mediaHover:hover:font-bold focus:font-bold',
 

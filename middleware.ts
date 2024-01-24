@@ -20,7 +20,7 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const queryParams = request.nextUrl.searchParams;
   const utm_medium = queryParams.get('utm_medium');
-  const utm_source = queryParams.get('utm_source');
+  const utm_source = queryParams.get('utm_source') || 'direct';
   const utm_campaign = queryParams.get('utm_campaign');
   const utm_content = queryParams.get('utm_content');
 
