@@ -41,7 +41,11 @@ const Header = async ({
                 className="hidden xl:flex xl:w-[90px] xl:px-10"
               />
 
-              <OpenFormButton staticData={staticData}>
+              <OpenFormButton
+                staticData={staticData}
+                view="header"
+                variant="dark"
+              >
                 {formButton}
               </OpenFormButton>
             </div>

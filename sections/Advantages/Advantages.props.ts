@@ -1,3 +1,6 @@
+import { IIconBtnData } from '@/types';
+import { IForm } from '@/components/Form/Form.props';
+
 export type AdvantageItem = {
   id: string;
   title: string;
@@ -5,11 +8,15 @@ export type AdvantageItem = {
 };
 
 type StaticDataType = {
-  title: string;
-  mainQuestion: string;
-  advList: AdvantageItem[];
-  enrollText: string;
-  buttonText: string;
+  advantages: {
+    title: string;
+    mainQuestion: string;
+    advList: AdvantageItem[];
+    enrollText: string;
+    buttonText: string;
+  };
+  iconBtnData: IIconBtnData;
+  form: IForm;
 };
 
 export interface AdvantagesProps {

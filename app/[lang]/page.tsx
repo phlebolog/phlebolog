@@ -69,7 +69,14 @@ export default async function Home({
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_OLD}');`}
       </Script>
 
-      <HeroSection staticData={page.home.hero} lang={lang} />
+      <HeroSection
+        staticData={{
+          hero: page.home.hero,
+          iconBtnData: page.home.iconBtnData,
+          form: page.home.consultation.form,
+        }}
+        lang={lang}
+      />
       <AboutSection
         lang={lang}
         staticData={{
@@ -79,12 +86,20 @@ export default async function Home({
         }}
       />
       <AdvantagesSection
-        staticData={page.home.advantages}
+        staticData={{
+          advantages: page.home.advantages,
+          iconBtnData: page.home.iconBtnData,
+          form: page.home.consultation.form,
+        }}
         className="-mt-[30px] md:-mt-[52px] xl:-mt-[70px]"
       />
       <Treatments lang={lang} staticData={page.home.treatments} />
       <BannerSection
-        staticData={page.home.banner}
+        staticData={{
+          banner: page.home.banner,
+          iconBtnData: page.home.iconBtnData,
+          form: page.home.consultation.form,
+        }}
         lang={lang}
         className="-mt-[30px] md:-mt-[52px] xl:-mt-[70px]"
       />

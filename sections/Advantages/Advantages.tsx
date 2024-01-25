@@ -3,12 +3,15 @@
 import { FC } from 'react';
 
 import { AdvantagesProps } from './Advantages.props';
-import { Heading, AdvantagesList, ScrollLinkButton } from '@/components';
+import { Heading, AdvantagesList, OpenFormButton } from '@/components';
 import { useWindowWidth } from '@/hooks';
 
 const Advantages: FC<AdvantagesProps> = ({ staticData, className = '' }) => {
   const { isScreenMobile } = useWindowWidth();
-  const { title, mainQuestion, advList, enrollText, buttonText } = staticData;
+  const { title, mainQuestion, advList, enrollText, buttonText } =
+    staticData.advantages;
+
+  const { iconBtnData, form } = staticData;
 
   return (
     <section id="advantages" className={className}>
@@ -30,9 +33,13 @@ const Advantages: FC<AdvantagesProps> = ({ staticData, className = '' }) => {
               <p className="mb-6 whitespace-pre-wrap text-center text-sm leading-normal -tracking-[0.56px]">
                 {enrollText}
               </p>
-              <ScrollLinkButton className="mx-auto" linkto="consultation">
+              <OpenFormButton
+                staticData={{ iconBtnData, form }}
+                view="advantages"
+                variant="white"
+              >
                 {buttonText}
-              </ScrollLinkButton>
+              </OpenFormButton>
             </>
           ) : (
             <div className="flex justify-between">
@@ -44,12 +51,13 @@ const Advantages: FC<AdvantagesProps> = ({ staticData, className = '' }) => {
                   <p className="mb-6 w-[240px] text-start text-base leading-[1.5] -tracking-[0.64px] xl:w-[391px] xl:text-xl xl:leading-[1.2] xl:-tracking-[0.8px]">
                     {enrollText}
                   </p>
-                  <ScrollLinkButton
-                    className="mr-auto md:!w-[220px] md:!px-0 mdOnly:p-6"
-                    linkto="consultation"
+                  <OpenFormButton
+                    staticData={{ iconBtnData, form }}
+                    view="advantages"
+                    variant="white"
                   >
                     {buttonText}
-                  </ScrollLinkButton>
+                  </OpenFormButton>
                 </div>
               </div>
               <AdvantagesList advList={advList} />
