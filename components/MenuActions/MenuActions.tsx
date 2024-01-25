@@ -14,6 +14,8 @@ const MenuActions: React.FC<MenuActionsProps> = ({ data, actionHandler }) => {
       <OpenFormButton
         staticData={{ iconBtnData, form }}
         actionCloseHandler={actionHandler}
+        view="menu"
+        variant="dark"
       >
         {formButton}
       </OpenFormButton>

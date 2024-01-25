@@ -1,5 +1,5 @@
 import fetchNewData from '@/utils/fetchNewData';
-import { Heading, ButtonSecondary } from '@/components';
+import { Heading, OpenFormButton } from '@/components';
 import { IFetchedBannerData } from '@/types';
 import { BannerProps } from './Banner.props';
 
@@ -8,7 +8,8 @@ const Banner: React.FC<BannerProps> = async ({
   lang,
   className,
 }) => {
-  const { buttonText, title, description } = staticData;
+  const { buttonText, title, description } = staticData.banner;
+  const { iconBtnData, form } = staticData;
   let data = {
     title,
     description,
@@ -39,12 +40,13 @@ const Banner: React.FC<BannerProps> = async ({
           </Heading>
 
           <div className="flex flex-col md:flex-col-reverse md:items-end md:gap-6 xl:gap-12">
-            <ButtonSecondary
-              linkto="consultation"
-              className="mx-auto mb-2 md:mx-0 md:mb-0 md:mr-auto xl:w-[183px] xl:!px-0"
+            <OpenFormButton
+              staticData={{ iconBtnData, form }}
+              view="banner"
+              variant="light"
             >
               {buttonText}
-            </ButtonSecondary>
+            </OpenFormButton>
 
             <p className="mx-auto w-[260px] text-center text-xs font-medium !leading-normal -tracking-[0.48px] text-white md:w-[290px] md:text-start md:text-xl md:-tracking-[0.8px] xl:w-[530px] xl:text-left xl:text-2xl xl:-tracking-[0.96px]">
               {data.description}
