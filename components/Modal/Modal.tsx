@@ -14,6 +14,7 @@ const Modal: React.FC<ModalProps> = ({
   isReview,
   onCloseClick,
   children,
+  formModal,
 }) => {
   const [isReady, setIsReady] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
@@ -97,8 +98,10 @@ const Modal: React.FC<ModalProps> = ({
               >
                 <div
                   className={classNames({
-                    'relative w-auto max-w-[80%] overflow-hidden rounded-extended bg-white px-[20px] pb-[40px] pt-[56px] md:max-w-[704px] xl:max-w-[900px] smOnly:h-full smOnly:max-h-[80vh]':
+                    'relative w-auto max-w-[80%] overflow-hidden rounded-extended bg-white px-5 pb-10 pt-[56px] md:max-w-[704px] xl:max-w-[900px] smOnly:h-full smOnly:max-h-[80vh]':
                       true,
+                    'relative !max-h-[600px] w-auto max-w-[80%]  !p-5  md:max-w-[704px] xl:max-w-[900px] smOnly:h-full ':
+                      formModal,
                     'md:p-[50px]': isReview,
                     'md:mb-auto md:mt-auto xl:py-[80px]': zoom,
                     'md:px-[24px] md:py-[60px] xl:px-[100px] xl:py-[80px] smOnly:w-[80%] smOnly:max-w-[440px]':
@@ -106,7 +109,7 @@ const Modal: React.FC<ModalProps> = ({
                   })}
                 >
                   <IconBtn
-                    variant="close"
+                    variant="formModal"
                     icon="close"
                     iconFunction={staticData.close.iconFunction}
                     iconLabel={staticData.close.iconLabel}

@@ -31,6 +31,8 @@ const IconBtn: FC<IconBtnProps> = ({
     'w-[32px] h-[32px] text-notify-error': variant.toLowerCase() === 'location',
     'h-[16px] w-[16px] md:h-[24px] md:w-[24px] text-black':
       variant.toLowerCase() === 'close',
+    'h-[24px] w-[24px] md:h-[32px] md:w-[32px] text-black':
+      variant === 'formModal',
     'rotate-180': reverse,
   });
 
@@ -48,6 +50,8 @@ const IconBtn: FC<IconBtnProps> = ({
     'absolute right-0 top-0 h-[56px] w-[56px] md:h-[80px] md:w-[80px]':
       variant.toLowerCase() === 'close',
     'w-[32px] h-[32px]': variant.toLowerCase() === 'location',
+    'absolute right-0 top-0 h-[40px] w-[40px] md:h-[60px] md:w-[60px]':
+      variant === 'formModal',
   });
 
   return (

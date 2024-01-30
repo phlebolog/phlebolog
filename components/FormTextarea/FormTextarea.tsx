@@ -15,7 +15,7 @@ const FormTextarea: FC<FormTextareaProps> = ({
   const hasError = errors[name];
 
   const textareaClass = classnames(
-    'h-[182px] p-4 text-base rounded-extended resize-none placeholder-gray-dark transition-all duration-300',
+    'h-[154px] p-[12px] text-base rounded-extended resize-none placeholder-gray-dark transition-all duration-300',
 
     'outline-none outline-1 outline-offset-1 outline-gray-dark hover:outline-gray-dim focus:outline-gray-dim',
     {
