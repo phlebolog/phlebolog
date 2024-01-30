@@ -75,13 +75,13 @@ const OpenFormButton = ({
         staticData={staticData.iconBtnData}
         onCloseClick={() => setIsOpen(false)}
         isOpen={isOpen}
-        isReview
+        formModal
       >
         <Form
           staticData={staticData.form}
           setIsOpen={setIsOpen}
           actionCloseHandler={actionCloseHandler}
-          className="mx-auto w-full rounded-extended bg-white p-4 md:w-[560px] md:px-6 md:py-10"
+          className="mx-auto max-h-[600px] w-full rounded-extended bg-white pt-4 md:w-[520px] md:px-6 md:py-4 xl:pb-0"
         />
       </Modal>
     </>

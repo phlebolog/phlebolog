@@ -9,7 +9,8 @@ export interface IconBtnProps {
     | 'footer'
     | 'location'
     | 'close'
-    | 'doctor';
+    | 'doctor'
+    | 'formModal';
   reverse?: boolean | undefined;
   onClick?: () => void;
   className?: string | undefined;

@@ -15,7 +15,7 @@ const FormInput: FC<FormInputProps> = ({
   const hasError = errors[name];
 
   const inputClass = classnames(
-    'h-[51px] md:h-[59px] text-base outline-none outline-1 outline-offset-1 outline-gray-dark px-4 rounded-extended placeholder-gray-dark hover:outline-gray-dim focus:outline-gray-dim transition-all duration-300',
+    'h-[51px] md:h-[46px] text-base outline-none outline-1 outline-offset-1 outline-gray-dark px-4 rounded-extended placeholder-gray-dark hover:outline-gray-dim focus:outline-gray-dim transition-all duration-300',
     {
       'outline-notify-error hover:outline-notify-error focus:outline-notify-error':
         hasError,
